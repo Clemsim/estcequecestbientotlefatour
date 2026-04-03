@@ -1,13 +1,12 @@
-<script>
-    const date = new Date();
-    const debutFatour = new Date("2026-04-17");
-    // Calculer la différence en millisecondes
-    const diff = debutFatour.getTime() - date.getTime();
-    // Convertir la différence en jours
-    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-    // Afficher le résultat et le centrer au milieu de la page
-    const resultElement = document.getElementById("result");
-    resultElement.textContent = `Il reste ${days} jours avant le début de la Fatour.`;
+<script lang="ts">
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 </script>
 
-<div id="result"></div>
+<div class="flex min-h-screen flex-col items-center justify-center gap-6 text-center">
+	<p class="text-2xl font-semibold">{data.message}</p>
+	<p class="text-lg text-gray-600">
+		Il reste <strong>{data.daysUntilFatour}</strong> jours avant le début de la Fatour.
+	</p>
+</div>

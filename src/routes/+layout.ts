@@ -1,1 +1,1 @@
-const spa = true;
+export const ssr = true;
