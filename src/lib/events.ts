@@ -39,6 +39,12 @@ export const timeEvents: TimeEvent[] = [
         message: "Peut-être l'heure de l'after cons?",
     },
     {
+        weekday: 0,
+        hour: [13, 18],
+        message:
+            "Je serai chaud de faire une p'tite coinche chez Béné, pas vous ?",
+    },
+    {
         weekday: 6,
         hour: 18,
         message: "Oh ouais on va chez Béné? Trop bien !",
