@@ -77,6 +77,12 @@ export const timeEvents: TimeEvent[] = [
         message: "C'est le soubassophone ou c'est toi qui est faux?",
     },
     {
+        weekday: 4,
+        hour: 23,
+        minute: 28,
+        message: "Dans 28 mètres, tournez à droite !",
+    },
+    {
         weekday: 5, // Friday
         hour: 17,
         message: "Ptit crous avant d'aller à la plage?",
