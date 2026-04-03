@@ -21,6 +21,40 @@ export const timeEvents: TimeEvent[] = [
         hour: 17,
         message: "C'est 17h le vendredi, tout le monde attend le Fatour !",
     },
+    {
+        weekday: 0,
+        hour: 18,
+        message: "Peut-être l'heure de l'after cons?",
+    },
+    {
+        weekday: 6,
+        hour: 18,
+        message: "Oh ouais on va chez Béné? Trop bien !",
+    },
+    {
+        weekday: 1,
+        hour: 18,
+        message:
+            "C'est lundi, la vie est nulle, force à ceux qui retourne au travail, heureusement qu'on va en Grèce, on va chez Béné ?",
+    },
+    {
+        weekday: 2,
+        hour: 18,
+        message:
+            "C'est mardi, la vie commence à être mieux, on se rapproche du week-end, on va chez Béné ?",
+    },
+    {
+        weekday: 3,
+        hour: 18,
+        message:
+            "C'est mercredi, c'est Bar'bu, on va chez Béné aujourd'hui ou juste on bouge pas ? Triste ...",
+    },
+    {
+        weekday: 4,
+        hour: 18,
+        message:
+            "C'est jeudi, c'est la répétition, et aujourd'hui on va chez Béné ? Soon ...",
+    },
 ];
 
 export const defaultMessage = "Est-ce que c'est bientôt la Fatour ?";
