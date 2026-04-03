@@ -1,25 +1,32 @@
 export interface TimeEvent {
-    /** Hour of the day (0–23) when this message applies */
-    weekday?: number; // Optional weekday field (0 for Sunday, 6 for Saturday)
-    hour: number;
-    minute?: number; // Optional minute field for more precise timing
+    /** Optional weekday (0 = Sunday, 6 = Saturday). Can be a single number or an array of valid days. */
+    weekday?: number | number[];
+    /** Hour of the day (0–23) when this message applies. Can be a single number or a [start, end] range (inclusive). */
+    hour: number | [number, number];
+    /** Optional minute field. Can be a single number or a [start, end] range (inclusive). If omitted, applies to the whole hour. */
+    minute?: number | [number, number];
     message: string;
 }
 
 /**
  * Add new entries here to show a different message at a given hour.
- * The first entry whose `hour` matches the current server hour is used.
+ * The first entry that matches the current day/time is used.
  * If no entry matches, the default message is shown.
  */
 export const timeEvents: TimeEvent[] = [
-    //{ hour: 12, message: "C'est midi, tout le monde est parti !" },
-    //{ hour: 14, minute: 23, message: "C'est moi ou ça pue?" },
-    //{ hour: 14, message: "C'est 14h, tout le monde est parti !" },
-    //{ hour: 23, message: "C'est 23h, tout le monde va à la piscine !" },
+    // Examples of new ranges features:
+    // { hour: [14, 15], message: "This lasts for 2 hours (14:00 to 15:59)!" },
+    // { hour: 10, minute: [15, 25], message: "Special 10-minute event! (10:15 to 10:25)" },
+    // { weekday: [0, 6], hour: 12, message: "Weekend noon!" },
     {
         weekday: 5, // Friday
         hour: 17,
         message: "Ptit crous avant d'aller à la plage?",
+    },
+    {
+        weekday: 6, // Saturday
+        hour: 10,
+        message: "Escalade dans les calanques avec Lotte et Figolu?",
     },
     {
         weekday: 5, // Friday
@@ -67,17 +74,42 @@ export const defaultMessage = "Est-ce que c'est bientôt la Fatour ?";
 export function getMessageForHour(
     hour: number,
     minute: number = 0,
-    weekday: number | undefined = undefined,
+    weekday?: number,
 ): string {
-    const exactMatch = timeEvents.find(
-        (e) => e.hour === hour && e.minute === minute && e.weekday === weekday,
-    );
-    if (exactMatch) return exactMatch.message;
+    // Si le paramètre weekday n'est pas passé (ex: depuis +page.server.ts),
+    // on le récupère automatiquement avec la date actuelle.
+    const currentWeekday =
+        weekday !== undefined ? weekday : new Date().getDay();
 
-    const hourMatch = timeEvents.find(
-        (e) => e.hour === hour && e.minute === undefined,
-    );
-    if (hourMatch) return hourMatch.message;
+    const event = timeEvents.find((e) => {
+        // 1. Vérification du jour de la semaine
+        if (e.weekday !== undefined) {
+            if (typeof e.weekday === "number") {
+                if (e.weekday !== currentWeekday) return false;
+            } else if (Array.isArray(e.weekday)) {
+                if (!e.weekday.includes(currentWeekday)) return false;
+            }
+        }
 
-    return defaultMessage;
+        // 2. Vérification de l'heure (nombre exact ou plage [début, fin])
+        if (typeof e.hour === "number") {
+            if (e.hour !== hour) return false;
+        } else if (Array.isArray(e.hour)) {
+            if (hour < e.hour[0] || hour > e.hour[1]) return false;
+        }
+
+        // 3. Vérification des minutes (nombre exact, plage [début, fin], ou ignoré)
+        if (e.minute !== undefined) {
+            if (typeof e.minute === "number") {
+                if (e.minute !== minute) return false;
+            } else if (Array.isArray(e.minute)) {
+                if (minute < e.minute[0] || minute > e.minute[1]) return false;
+            }
+        }
+
+        // Si tout correspond
+        return true;
+    });
+
+    return event ? event.message : defaultMessage;
 }
