@@ -66,6 +66,12 @@ export const timeEvents: TimeEvent[] = [
     },
     {
         weekday: 4,
+        hour: 17,
+        minute: [44,46],
+        message: "ya une jouab trombone?",
+    },
+    {
+        weekday: 4,
         hour: 18,
         message:
             "C'est jeudi, c'est la répétition, et aujourd'hui on va chez Béné ? Soon ...",
@@ -79,7 +85,7 @@ export const timeEvents: TimeEvent[] = [
     {
         weekday: 4,
         hour: 23,
-        minute: 28,
+        minute: [28, 30],
         message: "Dans 28 mètres, tournez à droite !",
     },
     {
