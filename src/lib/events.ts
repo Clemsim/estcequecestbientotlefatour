@@ -19,6 +19,11 @@ export const timeEvents: TimeEvent[] = [
     {
         weekday: 5, // Friday
         hour: 17,
+        message:"Ptit crous avant d'aller à la plage?"
+    }
+    {
+        weekday: 5, // Friday
+        hour: 17,
         message: "C'est 17h le vendredi, tout le monde attend le Fatour !",
     },
     {
