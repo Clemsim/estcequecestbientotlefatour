@@ -18,42 +18,39 @@ export const timeEvents: TimeEvent[] = [
     // { hour: [14, 15], message: "This lasts for 2 hours (14:00 to 15:59)!" },
     // { hour: 10, minute: [15, 25], message: "Special 10-minute event! (10:15 to 10:25)" },
     // { weekday: [0, 6], hour: 12, message: "Weekend noon!" },
-    {
-        weekday: 5, // Friday
-        hour: 17,
-        message: "Ptit crous avant d'aller à la plage?",
-    },
-    {
-        weekday: 6, // Saturday
-        hour: [8, 12],
-        message: "Escalade dans les calanques avec Lotte et Figolu?",
-    },
-    {
-        weekday: 5, // Friday
-        hour: 17,
-        message: "C'est 17h le vendredi, tout le monde attend le Fatour !",
-    },
+
     {
         weekday: 0,
-        hour: 18,
+        hour: 19,
         message: "Peut-être l'heure de l'after cons?",
     },
     {
         weekday: 0,
-        hour: [13, 18],
+        hour: [13, 17],
         message:
             "Je serai chaud de faire une p'tite coinche chez Béné, pas vous ?",
     },
     {
-        weekday: 6,
+        weekday: 0,
         hour: 18,
-        message: "Oh ouais on va chez Béné? Trop bien !",
+        message: "Toi, moi, le perdant envoie sa tierlist à l'autre ?",
+    },
+    {
+        weekday: 0,
+        hour: 23,
+        message:
+            "Toujours debout à cette heure ? T'as pas sommeil? Fais un sec !",
     },
     {
         weekday: 1,
         hour: 18,
         message:
             "C'est lundi, la vie est nulle, force à ceux qui retourne au travail, heureusement qu'on va en Grèce, on va chez Béné ?",
+    },
+    {
+        weekday: 2,
+        hour: 17,
+        message: "P'tite raclette?",
     },
     {
         weekday: 2,
@@ -72,6 +69,40 @@ export const timeEvents: TimeEvent[] = [
         hour: 18,
         message:
             "C'est jeudi, c'est la répétition, et aujourd'hui on va chez Béné ? Soon ...",
+    },
+    {
+        weekday: 4,
+        hour: 19,
+        minute: [0, 30],
+        message: "C'est le soubassophone ou c'est toi qui est faux?",
+    },
+    {
+        weekday: 5, // Friday
+        hour: 17,
+        message: "Ptit crous avant d'aller à la plage?",
+    },
+    {
+        weekday: 5, // Friday
+        hour: 17,
+        message: "C'est 17h le vendredi, tout le monde attend le Fatour !",
+    },
+    {
+        weekday: 6,
+        hour: 18,
+        minute: [0, 30],
+        message: "Oh ouais on va chez Béné? Trop bien !",
+    },
+    {
+        weekday: 6,
+        hour: 18,
+        minute: [30, 59],
+        message:
+            "P'tit cinéma? Tracto a dit qu'il paye sa tournée à l'Artplexe !",
+    },
+    {
+        weekday: 6, // Saturday
+        hour: [8, 12],
+        message: "Escalade dans les calanques avec Lotte et Figolu?",
     },
 ];
 
