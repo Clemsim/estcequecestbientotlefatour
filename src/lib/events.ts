@@ -25,7 +25,7 @@ export const timeEvents: TimeEvent[] = [
     },
     {
         weekday: 6, // Saturday
-        hour: 10,
+        hour: [8, 12],
         message: "Escalade dans les calanques avec Lotte et Figolu?",
     },
     {
