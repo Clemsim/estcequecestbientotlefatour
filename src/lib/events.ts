@@ -48,6 +48,22 @@ export const timeEvents: TimeEvent[] = [
             "C'est lundi, la vie est nulle, force à ceux qui retourne au travail, heureusement qu'on va en Grèce, on va chez Béné ?",
     },
     {
+        weekday: 1,
+        hour: [8, 17],
+        message:
+            "C'est toujours lundi mais c'est pas encore l'heure de la Fatour, courage !",
+    },
+    {
+        weekday: 1,
+        hour: 17,
+        message: "Journée internationale des saxs, am i right?",
+    },
+    {
+        weekday: 1,
+        hour: [19, 23],
+        message: "C'est lundi soir, on va chez Béné ou toujours pas?",
+    },
+    {
         weekday: 2,
         hour: 17,
         message: "P'tite raclette?",
@@ -64,6 +80,24 @@ export const timeEvents: TimeEvent[] = [
         message:
             "C'est mercredi, c'est Bar'bu, on va chez Béné aujourd'hui ou juste on bouge pas ? Triste ...",
     },
+    {
+        weekday: 3,
+        hour: [7, 9],
+        message:
+            "Allez on se réveille, grosse journée en préparation, mais ce soir ...",
+    },
+    {
+        weekday: 3,
+        hour: [9, 17],
+        message: "Kami nous lâche aujourd'hui, snif snif",
+    },
+    {
+        weekday: 3,
+        hour: 17,
+        message:
+            "Normalement Kami est revenu, si non il faut commencer à s'inquiéter les 2As !!!",
+    },
+
     {
         weekday: 4,
         hour: [8, 10],
@@ -114,6 +148,34 @@ export const timeEvents: TimeEvent[] = [
         message: "C'est 17h le vendredi, tout le monde attend le Fatour !",
     },
     {
+        weekday: 5,
+        hour: [7, 9],
+        message:
+            "Allez on se réveille, en espérant que les 2As se staff et staff le reste des fanfarons",
+    },
+    {
+        weekday: 5,
+        hour: [9, 12],
+        message: "Plutôt Fireball ou Jäger ?",
+    },
+    {
+        weekday: 5,
+        hour: [12, 16],
+        message: "La jouerie va être dur aujourd'hui, courage !",
+    },
+    {
+        weekday: 5,
+        hour: [16, 17],
+        message:
+            "Allez c'est le dernier weekend, ya le renouveau et la team B qui arrive !",
+    },
+    {
+        weekday: 5,
+        hour: [18, 23],
+        message:
+            "C'est vendredi soir, on va chez Béné ou toujours pas? Indice : c'est oui, mais pas aujourd'hui !",
+    },
+    {
         weekday: 6,
         hour: 18,
         minute: [0, 30],
@@ -124,7 +186,7 @@ export const timeEvents: TimeEvent[] = [
         hour: 18,
         minute: [30, 59],
         message:
-            "P'tit cinéma? Tracto a dit qu'il paye sa tournée à l'Artplexe !",
+            "P'tit cinéma? Tracto a dit qu'il paye sa tournée à l'Artplexe Canebière !",
     },
     {
         weekday: 6, // Saturday
