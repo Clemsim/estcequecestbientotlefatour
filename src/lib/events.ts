@@ -66,8 +66,23 @@ export const timeEvents: TimeEvent[] = [
     },
     {
         weekday: 4,
+        hour: [8, 10],
+        message: "Tracto part en Suède pour sa mobilité, snif snif !",
+    },
+    {
+        weekday: 4,
+        hour: [5, 7],
+        message: "B4 Départ Tracto ?",
+    },
+    {
+        weekday: 4,
+        hour: [12, 14],
+        message: "After Départ Tracto ? P'tit sec en visio au CROUS?",
+    },
+    {
+        weekday: 4,
         hour: 17,
-        minute: [44,46],
+        minute: [44, 46],
         message: "ya une jouab trombone?",
     },
     {
