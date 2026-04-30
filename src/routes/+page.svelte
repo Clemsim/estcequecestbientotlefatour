@@ -12,4 +12,25 @@
         Il reste <strong>{data.daysUntilFatour}</strong> jours avant le début de la
         Fatour.
     </p>
+    {#if data.isFatour}
+        <div class="mt-4 flex flex-col items-center gap-4">
+            <p class="text-lg">Le roadbook est disponible !</p>
+            <div class="flex gap-4">
+                <a
+                    href="/roadbook2027.pdf"
+                    target="_blank"
+                    class="rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+                >
+                    Visionner le roadbook
+                </a>
+                <a
+                    href="/roadbook2027.pdf"
+                    download
+                    class="rounded-lg bg-gray-200 px-4 py-2 text-gray-800 transition-colors hover:bg-gray-300"
+                >
+                    Télécharger
+                </a>
+            </div>
+        </div>
+    {/if}
 </div>
